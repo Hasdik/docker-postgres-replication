@@ -1,5 +1,4 @@
 #!/bin/bash
-if [ ! -s "$PGDATA/recovery.conf" ]; then
 echo "*:*:*:$PG_REP_USER:$PG_REP_PASSWORD" > ~/.pgpass
 
 chmod 0600 ~/.pgpass
@@ -25,4 +24,3 @@ chmod 700 ${PGDATA} -R
 sed -i 's/wal_level = hot_standby/wal_level = replica/g' ${PGDATA}/postgresql.conf 
 
 exec "$@"
-fi
