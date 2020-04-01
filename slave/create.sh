@@ -11,6 +11,8 @@ docker run -dit --restart unless-stopped \
         --name vektor-postgres \
         --hostname vektor-postgres \
         --network isolated \
+        -p 10.129.19.191:5432:5432 \
+        -p 127.0.0.1:5432:5432 \
         -v /home/vektor32/vektor-postgres/postgresql/9.6/main:/var/lib/postgresql/data \
         -e POSTGRES_USER=postgres \
         -e POSTGRES_PASSWORD=ySUH2aMY \
